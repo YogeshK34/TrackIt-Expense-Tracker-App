@@ -9,6 +9,7 @@ import {
   Receipt,
   LogOut,
   PieChartIcon,
+  HomeIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/hero/Logo";
@@ -34,7 +35,6 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
       <div className="flex h-16 items-center border-b px-6">
         <div className="flex items-center space-x-2">
           <Logo />
-          <span className="text-xl font-bold">TrackIt</span>
         </div>
       </div>
       <div className="flex flex-1 flex-col space-y-1 p-4">
@@ -62,7 +62,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               router.push("/");
             }}
           >
-            <PieChartIcon />
+            <HomeIcon />
           </Button>
 
           <Button variant="ghost" size="icon">
