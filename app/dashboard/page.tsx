@@ -20,7 +20,9 @@ export default function DashboardPage() {
           <ExpenseProvider>
             {activeTab === "overview" && <Overview />}
           </ExpenseProvider>
-          {activeTab === "budget" && <Budget />}
+          <ExpenseProvider>
+            {activeTab === "budget" && <Budget />}
+          </ExpenseProvider>
           {activeTab === "savings" && <Savings />}
           {activeTab === "bank-accounts" && <BankAccounts />}
           {activeTab === "receipt-sharing" && <ReceiptSharingComponent />}

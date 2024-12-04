@@ -24,32 +24,33 @@ interface ExpenseContextType {
 const ExpenseContext = createContext<ExpenseContextType | undefined>(undefined);
 
 export function ExpenseProvider({ children }: { children: ReactNode }) {
-  const [transactions, setTransactions] = useState<Transaction[]>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("transactions");
-      return saved ? JSON.parse(saved) : [];
-    }
-    return [];
+  // Start with default values
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [categories, setCategories] = useState<Category[]>(defaultCategories);
+  const [savings, setSavings] = useState<Savings>({
+    total: 0,
+    available: 0,
+    allocated: 0,
   });
 
-  const [categories, setCategories] = useState<Category[]>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("categories");
-      return saved ? JSON.parse(saved) : defaultCategories;
-    }
-    return defaultCategories;
-  });
+  // Sync with localStorage after the component mounts
+  useEffect(() => {
+    const savedTransactions = localStorage.getItem("transactions");
+    const savedCategories = localStorage.getItem("categories");
+    const savedSavings = localStorage.getItem("savings");
 
-  const [savings, setSavings] = useState<Savings>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("savings");
-      return saved
-        ? JSON.parse(saved)
-        : { total: 0, available: 0, allocated: 0 };
+    if (savedTransactions) {
+      setTransactions(JSON.parse(savedTransactions));
     }
-    return { total: 0, available: 0, allocated: 0 };
-  });
+    if (savedCategories) {
+      setCategories(JSON.parse(savedCategories));
+    }
+    if (savedSavings) {
+      setSavings(JSON.parse(savedSavings));
+    }
+  }, []);
 
+  // Save to localStorage whenever the state changes
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(transactions));
     localStorage.setItem("categories", JSON.stringify(categories));
@@ -71,7 +72,7 @@ export function ExpenseProvider({ children }: { children: ReactNode }) {
   };
 
   const allocateToSavings = (amount: number) => {
-    setSavings((prev : any) => ({
+    setSavings((prev) => ({
       ...prev,
       total: prev.total + amount,
       available: prev.available + amount,
@@ -79,7 +80,7 @@ export function ExpenseProvider({ children }: { children: ReactNode }) {
   };
 
   const useSavings = (amount: number) => {
-    setSavings((prev : any) => ({
+    setSavings((prev) => ({
       ...prev,
       available: prev.available - amount,
       allocated: prev.allocated + amount,
