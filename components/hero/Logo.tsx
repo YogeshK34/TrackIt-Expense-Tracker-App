@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { CircleDollarSign } from "lucide-react";
 
@@ -17,7 +16,7 @@ export function Logo({ className = "", showText = true }: LogoProps) {
     >
       <div className="relative">
         <motion.div
-          className="absolute inset-0 bg-primary/20 rounded-lg blur-xl"
+          className="absolute inset-0 bg-primary/20 dark:bg-primary/10 rounded-lg blur-xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.5, 0.8, 0.5],
@@ -29,11 +28,11 @@ export function Logo({ className = "", showText = true }: LogoProps) {
           }}
         />
         <motion.div
-          className="relative bg-gradient-to-br from-primary to-primary/80 p-2 rounded-lg"
+          className="relative bg-gradient-to-br from-primary to-primary/80 dark:from-primary/90 dark:to-primary/70 p-2 rounded-lg"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <CircleDollarSign className="w-6 h-6 text-white" />
+          <CircleDollarSign className="w-6 h-6 text-primary-foreground dark:text-white" />
         </motion.div>
       </div>
       {showText && (
@@ -43,8 +42,12 @@ export function Logo({ className = "", showText = true }: LogoProps) {
           transition={{ delay: 0.2 }}
           className="flex flex-col items-start"
         >
-          <span className="text-xl font-bold tracking-tight">TrackIt</span>
-          <span className="text-xs text-muted-foreground">Smart Finance</span>
+          <span className="text-xl font-bold tracking-tight text-foreground dark:text-white">
+            TrackIt
+          </span>
+          <span className="text-xs text-muted-foreground dark:text-gray-400">
+            Smart Finance
+          </span>
         </motion.div>
       )}
     </motion.div>
