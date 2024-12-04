@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/hero/Logo";
+import { ThemeToggle } from "../theme-toggle";
 
 interface SidebarProps {
   activeTab: string;
@@ -55,18 +56,15 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
       </div>
       <div className="border-t p-4">
         <div className="flex items-center justify-between">
+          <ThemeToggle />
           <Button
-            variant="ghost"
-            size="icon"
             onClick={() => {
               router.push("/");
             }}
+            variant="ghost"
+            size="icon"
           >
             <HomeIcon />
-          </Button>
-
-          <Button variant="ghost" size="icon">
-            <LogOut className="h-4 w-4" />
           </Button>
         </div>
       </div>

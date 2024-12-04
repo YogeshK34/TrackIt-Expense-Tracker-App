@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { CircleDollarSign } from "lucide-react";
 

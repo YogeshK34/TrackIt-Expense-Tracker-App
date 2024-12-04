@@ -1,5 +1,4 @@
 import { UniqueHero } from "@/components/HeroComponent";
-import Features from "@/components/features/Features";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TrustIndicators } from "@/components/sections/TrustIndicators";
 import { Pricing } from "@/components/sections/Pricing";
@@ -8,6 +7,7 @@ import { AnimatedTestimonialsDemo } from "@/components/testimonials";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/sections/FloatingCTA";
+import { FeatureSection } from "@/components/features/FeatureSection";
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
         <HowItWorks />
       </div>
       <div className="border-t">
-        <Features />
+        <FeatureSection />
       </div>
       <div className="border-t">
         <Pricing />
