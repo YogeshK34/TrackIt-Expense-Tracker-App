@@ -1,6 +1,6 @@
 # TrackIt - Smart Expense Tracking & Budgeting
 
-![TrackIt Logo](https://asset.cloudinary.com/da6ne7pa0/add037b03656ffd3fc22eab883876cbd)
+![TrackIt Logo](/public/LandingPage.png)
 
 TrackIt is a modern, intuitive expense tracking application built with Next.js that helps you take control of your finances through smart budgeting, receipt management, and automated bank synchronization.
 
@@ -14,6 +14,8 @@ TrackIt is a modern, intuitive expense tracking application built with Next.js t
 - Visual spending analytics and trends
 
 ### 🧾 Receipt Management
+
+![Receipt](/public/Receipt.png)
 
 - Instant receipt scanning and digitization
 - Automatic expense categorization
@@ -30,6 +32,8 @@ TrackIt is a modern, intuitive expense tracking application built with Next.js t
 
 ### 💰 Transaction Management
 
+![Transaction Management](/public/Transactions.png)
+
 - Easy manual transaction entry
 - Split transaction support
 - Recurring transaction setup
@@ -37,6 +41,8 @@ TrackIt is a modern, intuitive expense tracking application built with Next.js t
 - Custom tags and notes
 
 ### 📊 Savings Tracking
+
+![Savings](/public/Savings.png)
 
 - Set and monitor savings goals
 - Track progress with visual indicators
