@@ -1,5 +1,5 @@
 import { Category } from "@/types";
-import { ShoppingBag, Home, Car, Utensils, Plane, Heart, Smartphone, Coffee } from 'lucide-react';
+import { CarIcon, CoffeeIcon, HeartIcon, HomeIcon, PlaneIcon, ShoppingBagIcon, SmartphoneIcon, UtensilsIcon } from "lucide-react";
 
 export const defaultCategories: Category[] = [
     {
@@ -61,13 +61,12 @@ export const defaultCategories: Category[] = [
 ];
 
 export const icons = {
-    ShoppingBag,
-    Home,
-    Car,
-    Utensils,
-    Plane,
-    Heart,
-    Smartphone,
-    Coffee
+    ShoppingBagIcon,
+    HomeIcon,
+    CarIcon,
+    UtensilsIcon,
+    PlaneIcon,
+    HeartIcon,
+    SmartphoneIcon,
+    CoffeeIcon
 };
-

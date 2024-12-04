@@ -1,3 +1,6 @@
+import { ForwardRefExoticComponent } from "react";
+import { LucideProps } from "lucide-react";
+
 export interface Transaction {
     id: string;
     description: string;

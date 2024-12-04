@@ -20,10 +20,17 @@ import { LineChartComponent } from "./charts/line-chart";
 import { PieChart } from "./charts/pie-chart";
 import { TransactionForm } from "./transactions/transaction-form";
 import { useExpense } from "@/context/ExpenseContext";
+import { useState } from "react";
 
 export function Overview() {
+  const [isDialogOpen, setDialogOpen] = useState(false);
   const { transactions, addTransaction, deleteTransaction, categories } =
     useExpense();
+
+  const handleAddTransaction = (transaction: any) => {
+    addTransaction(transaction);
+    setDialogOpen(false); // Close the dialog after adding the transaction
+  };
 
   const totalIncome = transactions
     .filter((t) => t.type === "income")
@@ -69,7 +76,7 @@ export function Overview() {
     <div className="space-y-8">
       <div className="flex justify-between items-center">
         <h2 className="text-3xl font-bold tracking-tight">Overview</h2>
-        <Dialog>
+        <Dialog open={isDialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button>
               <PlusCircle className="mr-2 h-4 w-4" />
@@ -80,7 +87,10 @@ export function Overview() {
             <DialogHeader>
               <DialogTitle>Add Transaction</DialogTitle>
             </DialogHeader>
-            <TransactionForm onSubmit={addTransaction} onCancel={() => {}} />
+            <TransactionForm
+              onSubmit={handleAddTransaction}
+              onCancel={() => setDialogOpen(false)} // Close the dialog on cancel
+            />
           </DialogContent>
         </Dialog>
       </div>
