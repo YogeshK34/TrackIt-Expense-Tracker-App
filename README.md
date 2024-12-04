@@ -1,6 +1,6 @@
 # TrackIt - Smart Expense Tracking & Budgeting
 
-![TrackIt Logo](https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200&h=400)
+![TrackIt Logo](https://drive.google.com/file/d/1OxBT3jVZC3pYz5CNth6UIhcctKnrhLey/view?usp=drive_link)
 
 TrackIt is a modern, intuitive expense tracking application built with Next.js that helps you take control of your finances through smart budgeting, receipt management, and automated bank synchronization.
 
