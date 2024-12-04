@@ -11,6 +11,7 @@ import {
   PieChartIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Logo } from "@/components/hero/Logo";
 
 interface SidebarProps {
   activeTab: string;
@@ -32,7 +33,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
     <div className="flex h-full w-64 flex-col border-r bg-background">
       <div className="flex h-16 items-center border-b px-6">
         <div className="flex items-center space-x-2">
-          <PieChart className="h-8 w-8 text-primary" />
+          <Logo />
           <span className="text-xl font-bold">TrackIt</span>
         </div>
       </div>
@@ -54,7 +55,6 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
       </div>
       <div className="border-t p-4">
         <div className="flex items-center justify-between">
-          {/* <ThemeToggle /> */}
           <Button
             variant="ghost"
             size="icon"
